@@ -1,0 +1,26 @@
+
+a{
+    color:purple;
+}
+a.main{
+    color:green;
+}
+li.thrd_li>ul>li::marker{
+    content: "■";
+}
+li.scnd_li>ul>li::marker{
+    content: "✔";
+}
+li>ul>li::marker{
+    content: "";
+}
+li.thrd_li>ul>li>:first-child{
+    text-decoration: none;
+}
+ul:last-child{
+    color:black;
+}
+ul:last-child{
+    list-style-position: inside;
+    
+}

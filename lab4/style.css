@@ -1,0 +1,36 @@
+*{
+    font-family: Arial, serif;
+    font-size: 20px;
+    line-height: 40px;
+
+}
+p{
+    color: green;
+    text-align: center;
+}
+div{
+    text-align: justify;
+}
+.a{
+    color: red;
+}
+.aa{
+    white-space: nowrap;
+    overflow: scroll;
+}
+#q2nd_passage {
+    font-weight: bold;
+    font-style: italic;
+}
+.shadow_box{
+    text-shadow: 5px -5px 3px black;
+}
+.q1nd_division{
+    text-decoration: line-through;
+    text-indent: 50px;
+    text-transform: uppercase;
+}
+#q2nd_division{
+    letter-spacing: 30px;
+    word-spacing: 50px;
+}
