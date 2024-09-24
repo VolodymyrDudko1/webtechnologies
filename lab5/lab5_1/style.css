@@ -1,3 +1,113 @@
-*{
-    background-color: rgb(255, 0, 0);
+div{
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div>ul{
+    display: block;
+    
+    padding-left: 0px;
+}
+div h1{
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    
+}
+
+ul{
+    list-style-position: inside;
+    
+    
+}
+ul>li{
+    background: url(./icons/rule.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(103,158,128);
+    margin-bottom: 10px;
+    
+}
+
+ul li span{
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199,124,106);
+    margin-bottom: 10px;
+}
+ul li ul li span{
+    background-color: rgb(218,106,32);
+    
+    padding-bottom: 10px;
+    line-height: 30px;
+    margin-bottom: 0px;
+    font-style: italic;
+    font-weight: lighter;
+}
+ul li ul li{
+    margin-left: 9px;
+    display: block;
+    
+}
+ul>li:first-child>ul>li:first-child{
+    background: url(./icons/ad_units.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:first-child>ul>li:nth-child(2){
+    background: url(./icons/airplane_ticket.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:first-child>ul>li:nth-child(3){
+    background: url(./icons/hotel.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:first-child>ul>li:last-child{
+    background: url(./icons/car_rental.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:nth-child(2)>ul>li:first-child{
+    background: url(./icons/local_bar.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:nth-child(2)>ul>li:nth-child(2){
+    background: url(./icons/casino.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:nth-child(2)>ul>li:nth-child(3){
+    background: url(./icons/museum.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
+}
+ul>li:nth-child(2)>ul>li:last-child{
+    background: url(./icons/festival.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    list-style: none;
+    background-color: rgb(153,180,102);
 }
