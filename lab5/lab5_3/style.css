@@ -1,0 +1,94 @@
+*{
+    float: center;
+}
+form{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+fieldset legend{
+    background-color: aqua;
+    color: black;
+    font-weight: 700;
+}
+fieldset{
+    width: 40%;
+    color: white;
+}
+
+fieldset.person{
+    background-color: aquamarine;
+    
+    display: block;
+    margin: 20px;
+    margin-left: 25%;
+}
+fieldset.credentials{
+    background-color: peachpuff;
+    
+    display: block;
+    margin: 20px;
+    margin-left: 25%;
+}
+input{
+    background-color: azure;
+    margin-left: 10px;
+}
+#greenlbl{
+    color: green;
+    
+}
+#redlbl{
+    color: red;
+    
+}
+#bluelbl{
+    color: blue;
+    
+}
+div.color{
+    padding-left: 20px;
+    border: 1px groove gray;
+    margin: 3px;
+    text-align: start;
+}
+fieldset.beverages{
+    
+    color:black;
+    margin-left: 30%;
+    
+}
+div.food{
+    margin: 10px;
+    border: 1px groove gray;
+    
+}
+
+div.tests{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 3px solid black;
+    border-top: 2px ;
+}
+div.fields{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 3px solid black;
+    box-shadow:inset 0px 0px 0px 5px grey;
+    
+}
+div.age{
+    padding-left: 20px;
+    margin: 3px;
+    text-align:start;
+    
+    border: 1px groove gray;
+}
+button{
+    background-color: rgb(164, 240, 240);
+    border: 2px solid black;
+    border-radius: 20%;
+}
+button:hover{
+    padding:3px;
+}
+
