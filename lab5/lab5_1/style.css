@@ -56,25 +56,16 @@ ul li ul li{
     
 }
 ul>li:first-child>ul>li:first-child{
-    background: url(./icons/ad_units.svg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    list-style: none;
-    background-color: rgb(153,180,102);
+    background-image: url(./icons/ad_units.svg);
+    
 }
 ul>li:first-child>ul>li:nth-child(2){
-    background: url(./icons/airplane_ticket.svg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    list-style: none;
-    background-color: rgb(153,180,102);
+    background-image: url(./icons/airplane_ticket.svg);
+    
 }
 ul>li:first-child>ul>li:nth-child(3){
-    background: url(./icons/hotel.svg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    list-style: none;
-    background-color: rgb(153,180,102);
+    background-image: url(./icons/hotel.svg);
+    
 }
 ul>li:first-child>ul>li:last-child{
     background: url(./icons/car_rental.svg);

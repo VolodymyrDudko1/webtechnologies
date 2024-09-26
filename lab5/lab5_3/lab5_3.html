@@ -3,151 +3,172 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form method="POST" enctype="multipart/form-data" action="../Folder/Файл_за_посиланням.html">
-        <div class="fields">
-        <fieldset class="person">
-        <legend>persona</legend>
-        <p>Name: <label>
-          <input type="text" name="name" placeholder="Your name" value="" tabindex="1">
-        </label></p>
-        <p>Email: <label>
-          <input type="email" name="email" placeholder="youremail@email.com" value="" tabindex="2" autocomplete="off" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
-        </label></p>
-      </fieldset>  
-      <fieldset class="credentials">
-        <legend>credentials</legend>
-        <p>Password: <label>
-          <input type="password" tabindex="3" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-        </label></p>
-        <p>Telephone: <label>
-          <input type="tel" name="Telephone" placeholder="+380000000000" value="" tabindex="4" pattern="[\+][0-9]{12}" required>
-        </label></p>
-        <p>Date: <label>
-          <input type="date" tabindex="5" value="" placeholder="11/09/2024" name="date">
-        </label></p>
-
+<div class="body">
+    
+        <div class="main">
+        <form method="POST" enctype="multipart/form-data" action="../Folder/Файл_за_посиланням.html">
+            <fieldset class="main">
+                <legend>FORM</legend>
+            <div class="fields">
+            <fieldset class="person">
+            <legend>persona</legend>
+            <p>Name: </p>
+            <label>
+              <input type="text" name="name" placeholder="Your name" value="" tabindex="1">
+            </label>
+            <p>Email: </p>
+            <label>
+              <input type="email" name="email" placeholder="youremail@email.com" value="" tabindex="2" autocomplete="off" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            </label>
+          </fieldset>  
+          <fieldset class="credentials">
+            <legend>credentials</legend>
+            <p>Password: </p>
+            <label>
+              <input type="password" tabindex="3" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            </label>
+            <p>Telephone: </p>
+            <label>
+              <input type="tel" name="Telephone" placeholder="+380000000000" value="" tabindex="4" pattern="[\+][0-9]{12}" required>
+            </label>
+            <p>Date: </p>
+            <label>
+              <input type="date" tabindex="5" value="" placeholder="11/09/2024" name="date">
+            </label>
+    
+          </fieldset>
+        </div>
+          <div class="tests">
+          <div class="color">  
+            
+            <fieldset class="color">
+                <legend>Favorite color:</legend>
+                <input type="radio" id="green" name="fav_color" value="GREEN" checked>
+     <label id="greenlbl">green</label><br>
+    <input type="radio" id="red" name="fav_color" value="RED">
+     <label id="redlbl">red</label><br>
+    <input type="radio" id="blue" name="fav_color" value="BLUE">
+     <label id="bluelbl">blue</label><br>
+            </fieldset>
+    </div>
+      
+    <div class="age">
+      <fieldset class="age">
+        <legend>Your age:</legend>
+        <input type="radio" id="age1" name="age" value="30" checked>
+        <label >0 - 30</label><br>
+        <input type="radio" id="age2" name="age" value="60">
+        <label >31 - 60</label><br>  
+        <input type="radio" id="age3" name="age" value="100">
+        <label >61 - 100</label><br>
       </fieldset>
     </div>
-      <div class="tests">
-      <div class="color">  
-        <p>Please select your favorite color:</p>
-<input type="radio" id="green" name="fav_color" value="GREEN" checked>
- <label id="greenlbl">green</label><br>
-<input type="radio" id="red" name="fav_color" value="RED">
- <label id="redlbl">red</label><br>
-<input type="radio" id="blue" name="fav_color" value="BLUE">
- <label id="bluelbl">blue</label><br>
-  
-</div>
-  
-<div class="age">
-  <p>Please select your age:</p>
-  <input type="radio" id="age1" name="age" value="30" checked>
-  <label >0 - 30</label><br>
-  <input type="radio" id="age2" name="age" value="60">
-  <label >31 - 60</label><br>  
-  <input type="radio" id="age3" name="age" value="100">
-  <label >61 - 100</label><br><br>
-</div>
-</div>
-
-        
-      
-      <fieldset class="beverages">
-        <legend>Choose your preffered beverages:</legend>
-      
-        <div>
-          <input type="checkbox" id="fanta" name="fanta"  />
-          <label for="fanta">Fanta</label>
-        </div>
-      
-        <div>
-          <input type="checkbox" id="cola" name="cola" />
-          <label for="cola">Cola</label>
-        </div>
-        <div>
-          <input type="checkbox" id="sprite" name="sprite" />
-          <label for="sprite">Sprite</label>
-        </div>
-        <div>
-          <input type="checkbox" id="water" name="water" checked />
-          <label for="water">Water</label>
-        </div>
+    </div>
+    
+            
+          
+          <fieldset class="beverages">
+            <legend>Preffered beverages:</legend>
+          
+            <div>
+              <input type="checkbox" id="fanta" name="fanta"  />
+              <label for="fanta">Fanta</label>
+            </div>
+          
+            <div>
+              <input type="checkbox" id="cola" name="cola" />
+              <label for="cola">Cola</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sprite" name="sprite" />
+              <label for="sprite">Sprite</label>
+            </div>
+            <div>
+              <input type="checkbox" id="water" name="water" checked />
+              <label for="water">Water</label>
+            </div>
+          </fieldset>
+          
+          
+          <div class="music_cars_food">
+          <fieldset class="music">
+          <legend>Choose a genre:</legend>
+    
+      <select name="music" id="music">
+       <option value="pop">Pop</option>
+       <option value="rock" selected>Rock</option>
+        <option value="indie" >Indie</option>
+        <option value="jazz">Jazz</option>
+      </select>
+          </fieldset>
+      <fieldset class="cars">
+      <legend>Choose a car:</legend>
+    
+    <select name="cars" id="cars" multiple>
+      <option value="honda">Honda</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="opel" selected>Opel</option>
+      <option value="audi">Audi</option>
+      <option value="kia">Kia</option>
+      <option value="lamborgini">Lamborgini</option>
+    </select>
+    
       </fieldset>
+      <fieldset class="food">
+    <legend>Choose a food:</legend>
+    <select  name="food" id="food">
+      <optgroup label="main meal">
+        <option value="soup">Soup</option>
+        <option value="borsh">Borch</option>
+        <option value="vareniki">Vareniki</option>
+      </optgroup>
+      <optgroup label="side dish">
+        <option value="fries">Fries</option>
+        <option value="beans">Beans</option>
+        <option value="rice">Rice</option>
+      </optgroup>
+      <optgroup label="dessert">
+        <option value="ice-cream">Ice-cream</option>
+        <option value="donuts">Donuts</option>
+        <option value="cake">Cake</option>
+      </optgroup>
+      <optgroup label="snaks">
+        <option value="chips">Chips</option>
+        <option value="peanuts">Peanuts</option>
+        <option value="sunflower seeds">Sunflower seeds</option>
+      </optgroup>
+    
+    </select>
+      </fieldset>
+    </div>
+    <fieldset class="browsers">
+        <legend>Choose your browser from the list:</legend>
+        <input list="browsers" name="browser" id="browser">
+    
+        <datalist id="browsers">
+      <option value="Edge">
+      <option value="Firefox">
       
-      
-      <div class="music_cars_food">
-      <div class="music">
-      <label for="music">Choose a music genre:</label>
+        </datalist>
+      </fieldset>
+          <p class="message">Message:<br><label>
+            <textarea name="message", tabindex="6"></textarea>
+          </label></p>
+          <br>
+          
+        <input type="file" accept="audio/*" multiple> </input>
+        <div clas="buttons">
+          
+            <button type="submit" >Send</button>
+          
+          
+            <button type="reset">Reset</button>
+            </fieldset>
+          
+           
+        </form>  
+    </div>
+    </div>
 
-  <select name="music" id="music">
-   <option value="pop">Pop</option>
-   <option value="rock" selected>Rock</option>
-    <option value="indie" >Indie</option>
-    <option value="jazz">Jazz</option>
-  </select>
-</div>
-  <div class="cars">
-  <label for="cars">Choose a car:</label>
-
-<select name="cars" id="cars" multiple>
-  <option value="honda">Honda</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="opel" selected>Opel</option>
-  <option value="audi">Audi</option>
-  <option value="kia">Kia</option>
-  <option value="lamborgini">Lamborgini</option>
-</select>
-
-  </div>
-  <div class="food">
-<label for="food">Choose a food:</label>
-<select  name="food" id="food">
-  <optgroup label="main meal">
-    <option value="soup">Soup</option>
-    <option value="borsh">Borch</option>
-    <option value="vareniki">Vareniki</option>
-  </optgroup>
-  <optgroup label="side dish">
-    <option value="fries">Fries</option>
-    <option value="beans">Beans</option>
-    <option value="rice">Rice</option>
-  </optgroup>
-  <optgroup label="dessert">
-    <option value="ice-cream">Ice-cream</option>
-    <option value="donuts">Donuts</option>
-    <option value="cake">Cake</option>
-  </optgroup>
-  <optgroup label="snaks">
-    <option value="chips">Chips</option>
-    <option value="peanuts">Peanuts</option>
-    <option value="sunflower seeds">Sunflower seeds</option>
-  </optgroup>
-
-</select>
-</div>
-</div>
-      <p>Message:<br><label>
-        <textarea name="message", tabindex="6"></textarea>
-      </label></p>
-
-      <label for="browser">Choose your browser from the list:</label>
-<input list="browsers" name="browser" id="browser">
-
-<datalist id="browsers">
-  <option value="Edge">
-  <option value="Firefox">
-  
-</datalist>
-<input type="file" accept="audio/*" multiple> </input>
-<div clas="buttons">
-      
-        <button type="submit" >Send</button>
-      
-      
-        <button type="reset">Reset</button>
-      
-       
-    </form>  
 </div>
 </body>
