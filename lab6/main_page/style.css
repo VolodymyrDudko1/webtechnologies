@@ -1,0 +1,66 @@
+.global-shell{
+    width: 1140px;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+header{
+    position:absolute;
+    width: 100%;
+    margin-right: 15px;
+}
+.logo{
+    float:left;
+    padding: 7px;
+}
+.header-menue{
+    float: right;
+    margin-right: 5%;
+}
+.header-menue>a{
+    display: block;
+    float:left;
+    margin: 7px;
+    background-color: rgb(250, 53, 53);
+}
+.header-menue>a:hover{
+    background-color: rgb(254, 17, 17);
+}
+.body{
+    margin-top: 7%;
+    background-color: aqua;
+    text-align: left;
+}
+a>span{
+    display: block;
+    margin: 4px;
+}
+.text-with-imgs{
+    column-count: 3;
+    column-gap: 35px;
+    column-width: 30%;
+    column-rule: 5px dotted red;
+}
+.text-with-imgs img:first-child{
+    float: right;
+    
+    margin:10px;
+}
+.text-with-imgs img:nth-child(2){
+    float: left;
+    
+    margin:10px;
+    
+}
+.text-with-imgs img:nth-child(3){
+    float: right;
+    
+    margin:10px;
+    
+}
+.text-with-imgs img:nth-child(4){
+    float:right;
+    margin:10px;
+   
+}
