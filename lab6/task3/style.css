@@ -1,0 +1,79 @@
+.global-shell{
+    width: 1140px;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+header{
+    position:absolute;
+    width: 100%;
+    margin-right: 15px;
+}
+.logo{
+    float:left;
+    padding: 7px;
+}
+.header-menue{
+    float: right;
+    margin-right: 5%;
+}
+.header-menue>a{
+    display: block;
+    float:left;
+    margin: 7px;
+    background-color: rgb(250, 53, 53);
+}
+.header-menue>a:hover{
+    background-color: rgb(254, 17, 17);
+}
+a>span{
+    display: block;
+    margin: 4px;
+}
+.body{
+    margin-top: 7%;
+    
+    text-align: center;
+}
+.body div{
+    color:white;
+}
+.block-13{
+    background: rgb(200, 50, 50);
+    border: 0.01px solid brown;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.block-14{
+    background: rgb(191, 36, 36);
+    border: 0.01px solid brown;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.middle-block-14{
+    margin: 10px;
+    
+}
+div div .left{
+    display: inline-block;
+    padding: 15px;
+    line-height: 35px;
+    margin-right: 17px;
+    background: rgb(249, 83, 83);
+    border: 0.01px solid brown;
+    border-radius: 10px;
+    width: 45%;
+}
+div div .right{
+    display: inline-block; 
+    padding: 15px;
+    line-height: 35px;
+    background: rgb(238, 103, 103);
+    border: 0.01px solid brown;
+    border-radius: 10px;
+    width: 45%;
+}
+

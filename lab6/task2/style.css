@@ -1,0 +1,145 @@
+.global-shell{
+    width: 1140px;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+header{
+    position:absolute;
+    width: 100%;
+    margin-right: 15px;
+}
+.logo{
+    float:left;
+    padding: 7px;
+}
+.header-menue{
+    float: right;
+    margin-right: 5%;
+}
+.header-menue>a{
+    display: block;
+    float:left;
+    margin: 7px;
+    background-color: rgb(250, 53, 53);
+}
+.header-menue>a:hover{
+    background-color: rgb(254, 17, 17);
+}
+a>span{
+    display: block;
+    margin: 4px;
+}
+.body{
+    margin-top: 7%;
+    background-color: aqua;
+    text-align: center;
+}
+.body>div{
+    width: 300px;
+    margin: 14px;
+    text-align: left;
+}
+.body>div>h2{
+    margin: 9px;
+}
+.body>div>p{
+    margin: 6px;
+}
+.body>div:nth-child(1){
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
+    border-radius: 20px;
+    margin: 20px;
+}
+.body>div:nth-child(2){
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
+    border-radius: 50px 0px;
+    margin: 20px;
+}
+.body>div:nth-child(3){
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
+    border-radius: 25px 100px;
+    margin: 20px;
+}
+.body>div:nth-child(4){
+    float: left;
+    border-style: solid;
+    border-width: 14px 18px;
+    border-color: green greenyellow;
+    border-radius: 100px/20px ;
+    
+}
+.body>div:nth-child(5){
+    float: left;
+    border-style: solid;
+    border-width: 14px 18px;
+    border-color: green greenyellow;
+    border-radius: 200px 40px/40px 20px ;
+    
+}
+.body>div:nth-child(6){
+    float: left;
+    border-style: solid;
+    border-width: 14px 18px;
+    border-color: green greenyellow;
+    border-radius: 0px 0px 100% ;
+    
+}
+.body>div:nth-child(7){
+    float: left;
+    
+    border: solid yellow 14px;
+    border-image: url(../img/border_romb_Layer\ 1_copy_1.png) stretch;
+    border-image-slice: 19% 18%;
+    
+
+}
+.body>div:nth-child(8){
+    float: left;
+
+    
+    border: solid yellow 14px;
+    border-image: url(../img/border_romb_Layer\ 1_copy_1.png) repeat;
+    border-image-slice: 16.7% 15%;
+    border-width: 14px;
+}
+.body>div:nth-child(9){
+    float: left;
+    border: solid yellow 14px;
+    border-image: url(../img/border_romb_Layer\ 1_copy_1.png) repeat;
+    border-image-slice: 28 27.9 ;
+}
+.body>div:nth-child(10){
+    float: left;
+    border: solid yellow 14px;
+    border-image: url(../img/border_circle.png)  stretch;
+    border-image-slice: 140 245 ;
+    border-width: 19px 23px;
+    margin: 0px;
+}
+.body>div:nth-child(11){
+    float: left;
+    border: solid yellow 14px;
+    border-image: url(../img/border_circle.png)  repeat;
+    border-image-slice: 116 215 ;
+    border-width: 14px 30px;
+    margin: 0px;
+}
+.body>div:nth-child(12){
+    float: left;
+    border: solid yellow 14px;
+    border-image: url(../img/border_circle.png)  stretch;
+    border-image-slice: 116 215 ;
+    border-width: 19px 23px;
+    margin: 0px;
+}
