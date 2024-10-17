@@ -1,0 +1,46 @@
+body{
+    height: 380px;
+}
+.border-div{
+    width: 30%;
+    height: 70%;
+    position: relative;
+    margin-inline: auto;
+}
+.border-div div{
+    padding: 5%;
+}
+.upper-hover{
+    position: absolute;
+    top:0%;
+    left: 27.7%;
+    background-color: blue;
+    z-index: 1;
+}
+.lower-hover{
+    position: absolute;
+    bottom:0%;
+    left: 27.7%;
+    background-color: blue;
+    z-index: 1;
+}
+.left{
+    position: absolute;
+    bottom:14%;
+    left: 0%;
+    background-color: rgb(174, 174, 237);
+    height: 60%;
+    
+}
+.right{
+    position: absolute;
+    bottom:14%;
+    right: 0%;
+    background-color: rgb(174, 174, 237);
+    height: 60%;
+   
+}
+.right span, .left span{
+    display: block;
+    margin-block: 60%;
+}

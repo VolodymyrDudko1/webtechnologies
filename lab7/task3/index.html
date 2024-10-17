@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" action="#">
+             <h2 class="default">Заповніть форму</h2>
+             <h2 class="alternative">Ми вдячні вам</h2>
+                
+            <div class="fields">
+            <div class="left-side">
+            
+            <p>Login: </p>
+            <label>
+              <input type="text" name="name" placeholder="" value="" >
+            </label>
+            <p>Password: </p>
+            <label>
+                <input type="password"  name="password" class="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+              </label>
+              <p>First name: </p>
+            <label>
+              <input type="text" name="name" placeholder="" value="" >
+            </label>
+        </div>  
+          <div class="right-side">
+            
+            <label>
+                <p> Email:</p>
+              <input type="email" name="email" placeholder="" value="" tabindex="2" autocomplete="off" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            </label>
+            
+            <label>
+                <p>Type password again: </p>
+                <input type="password" class="password"  name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+              </label>
+            
+            <label>
+                <p>Last Name: </p>
+                <input type="text" name="name" placeholder="" value="" >
+              </label>
+    
+            </div>
+        </div>
+          
+           
+      
+    
+    
+      
+          <p class="message">About Me:</p><label>
+            <textarea name="message", tabindex="6"></textarea>
+          </label>
+          
+          
+        
+        <div class="buttons">
+            <button type="reset">Reset</button>
+            <button type="submit" >Ok</button>
+        </div>
+        
+            
+        </form>
+    </body>
+</html>

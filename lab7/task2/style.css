@@ -1,0 +1,51 @@
+body{
+    height: 380px;
+}
+.border-div{
+    width: 30%;
+    height: 50%;
+    position: relative;
+    margin-inline: auto;
+}
+.border-div div{
+    padding: 5%;
+    margin: 3%;
+    text-align: center;
+}
+.block1-1{
+    background: green;
+    position: absolute;
+    top:0%;
+    left: 0%;
+}
+.block1-2{
+    background: blue;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 21%;
+    height: 45%;
+    visibility: hidden;
+}
+.block2-1{
+    background: green;
+    position: absolute;
+    bottom:0%;
+    right: 0%;
+    width: 50%;
+}
+.block2-2{
+    position: absolute;
+    background: blue;
+    height: 45%;
+    right: 0%;
+    top: 0%;
+    width: 50%;
+    visibility: hidden;
+}
+.block1-1:hover ~ .block1-2 {
+    visibility:visible;
+}
+.block2-1:hover ~ .block2-2 {
+    visibility:visible;
+}
