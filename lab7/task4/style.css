@@ -126,10 +126,11 @@ ul:has(+ .embedded-horizontal:hover) li:last-child{
     list-style-type: none;
     background-color: #333;
     position: absolute;
-    top: 150px;
+    height: 120px;
+    top: 84px;
     left: 100px;
-     display: none;
-     padding: 10px 0 0;
+    display: none;
+    padding-inline: 0;
 }
 .first-embedded-vertical>li a, .second-embedded-vertical>li a, .third-embedded-vertical>li a{
     display: block;
@@ -139,20 +140,24 @@ ul:has(+ .embedded-horizontal:hover) li:last-child{
     list-style-type: none;
     background-color: #333;
     position: absolute;
-    top: 150px;
+    height: 120px;
+    top: 84px;
     left: 166px;
-     display: none;
-     padding: 10px 0 0;
+    display: none;
+    padding-inline: 0;
+    
     
 }
 .third-embedded-vertical{
     list-style-type: none;
     background-color: #333;
     position: absolute;
-    top: 150px;
+    height: 120px;
+    top: 84px;
     left: 232px;
      display: none;
-     padding: 10px 0 0;
+     padding-inline: 0;
+    
     
 }
 .vertical li:first-child{

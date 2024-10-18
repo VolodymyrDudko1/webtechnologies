@@ -34,8 +34,14 @@ h2.alternative{
 h2.default:hover~h2.alternative{
     display:block;
 }
+h2.alternative:hover{
+    display: block;
+}
 h2.default:hover{
     display: none;
+}
+.default:has(+ .alternative:hover){
+    display:none;
 }
 h2::first-letter{
     color: pink;
