@@ -17,6 +17,7 @@ body{
     position: absolute;
     top:0%;
     left: 0%;
+    width: 21%;
 }
 .block1-2{
     background: blue;
@@ -24,7 +25,7 @@ body{
     left: 0%;
     bottom: 0%;
     width: 21%;
-    height: 45%;
+    height: 40%;
     visibility: hidden;
 }
 .block2-1{
@@ -37,7 +38,7 @@ body{
 .block2-2{
     position: absolute;
     background: blue;
-    height: 45%;
+    height: 40%;
     right: 0%;
     top: 0%;
     width: 50%;

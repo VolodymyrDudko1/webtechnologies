@@ -13,14 +13,14 @@ body{
 .upper-hover{
     position: absolute;
     top:0%;
-    left: 27.7%;
+    left: 30%;
     background-color: blue;
     z-index: 1;
 }
 .lower-hover{
     position: absolute;
     bottom:0%;
-    left: 27.7%;
+    left: 30%;
     background-color: blue;
     z-index: 1;
 }
