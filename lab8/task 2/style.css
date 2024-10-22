@@ -2,9 +2,10 @@
     box-sizing: border-box;
     font-family: 'Nimbus Mono PS', 'Courier New', monospace;
     font-size: 13px;
-    overflow-x: hidden;
+    
 }
 body{
+    overflow-x: hidden;
     padding-inline: 2%;
 }
 a{
@@ -26,7 +27,8 @@ nav{
 
 }
 nav a{
-    margin-inline: 1%;
+    margin: 0 1%;
+
     text-align: center;
     padding: 4px 7px;
     border-radius: 8px;
@@ -39,7 +41,7 @@ nav a{
     font-size: 13px;
 }
 nav a:hover{
-    margin-block: -1%;
+    
 }
 .burger-menue{
     display: none;
