@@ -11,6 +11,7 @@ html {
   body {
     font-family: sans-serif;
     margin: 0;
+    overflow: hidden;
     background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
   }
   
@@ -18,60 +19,67 @@ html {
     color:white;
   }
   
-  .plan ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .cover  {
+    height:100vh;
+    width:100%;
   }
   
-  .plan ul li {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding:10px;
+  /*Video*/
+  
+  .dog {
+    height:100%;
+    -webkit-filter:blur(5px);
+    filter:blur(5px);
+    position: absolute;
+    top: 0;
+    z-index: -1;
   }
   
-  .plan ul li:last-child {
-    border-bottom: 0;
+  /*Hack to get them to align properly */
+  .flex-form > *:not([type="date"]) {
+    border-top:1px solid white;
+    border-bottom:1px solid white;
   }
   
-  .plan a {
-    text-decoration: none;
-    background:#FEFF00;
-    padding:10px;
-    color:black;
-    border-radius:4px;
-  }
-  
-  
-  .plan h2 {
-    text-transform: uppercase;
+  .flex-form input[type="submit"] {
+    background:#FF5A5F;
+    border-top: 1px solid #FF5A5F;
+    border-bottom: 1px solid #FF5A5F;
     color:white;
-    letter-spacing: 2px;
-    text-shadow:3px 3px 0 rgba(0,0,0,0.1);
   }
-  .price {
-    font-size: 50px;
-    font-family: serif;
-    margin: 10px 0;
+  
+  .flex-form {
+    z-index: 10;
+    position: relative;
+    display: flex;
   }
-  .pricing-grid {
-    max-width:750px;
-    margin: 0 auto;
-    display:flex;
-  }
-  .plan{
-    flex:1;
-    margin-inline:7px;
-    display:flex;
-    flex-wrap:wrap;
-    text-align:center;
+  
+  .flex-form > * {
+    border:0;
     padding:10px;
-    background-color: #2376ae;
+    background:white;
+    line-height:50px;
+    font-size: 20px;
+    border-radius:0;
+    outline:0;
+    border-right:1px solid rgba(0,0,0,0.2);
+    -webkit-appearance:none;
+    
+    
   }
-  .plan *{
-    flex:1 1 100%;
+  
+  .flex-form > *:last-child {
+    border-right: 0;
   }
-  .plan a{
-    align-self:flex-end;
+  .cover{
+    display:flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
+ 
+
+  
   
   
