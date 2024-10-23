@@ -40,9 +40,6 @@ nav a{
     align-items: center;
     font-size: 13px;
 }
-nav a:hover{
-    
-}
 .burger-menue{
     display: none;
 }
@@ -286,6 +283,8 @@ footer .socials a:nth-child(4){
         pointer-events: none;    
         background-color: blue;
     }
+
+    
     
     .burger-menue:after{
         position: absolute;
