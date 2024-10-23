@@ -106,9 +106,10 @@ nav a:hover{
 .our-works-body{
     display: flex;
     flex-wrap: wrap;
+    
 }
 .our-works-body img{
-    flex: 1 1 calc(33.33% - 6px);
+    flex: 0 1 calc(33.33% - 6px);
     margin: 3px;
     height: calc((33.33% - 6px)*0.75);
     
@@ -282,7 +283,7 @@ footer .socials a:nth-child(4){
         left:15%;
         width: 40px;
         height: 4px;
-
+        pointer-events: none;    
         background-color: blue;
     }
     
@@ -294,6 +295,7 @@ footer .socials a:nth-child(4){
         width: 40px;
         height: 4px;
         background-color: blue;
+        pointer-events: none;
     }
     header:before{
         position: absolute;
@@ -331,7 +333,7 @@ footer .socials a:nth-child(4){
     }
 
 }
-@media screen and (max-width:576px) {
+@media all and (max-width:576px) {
     .our-works-body img{
         flex: 0 1 calc(100% - 6px);
     }
