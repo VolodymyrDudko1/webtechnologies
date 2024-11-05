@@ -1,0 +1,254 @@
+
+
+@import url(../../normalize.scss);
+
+@import url(colors.scss);
+@import url(typefaces.scss);
+$font-family-main: 'Nimbus Mono PS', 'Courier New', monospace;
+$plain-black: rgb(0, 0, 0);
+$main-color: rgb(3, 3, 234);
+$color_4: rgb(130, 129, 129);
+$near-transparant: rgba(18, 17, 17, 0.071);
+$secondary-color: rgb(229, 237, 244);
+$accent-color: rgb(168, 168, 252);
+* {
+	box-sizing: border-box;
+	font-family: $font-family-main;
+	font-size: 13px;
+}
+body {
+	overflow-x: hidden;
+	padding-inline: 2%;
+}
+a {
+	text-decoration-line: none;
+}
+@import url(./layout/header.scss);
+.about-us {
+	margin-top: 3%;
+	display: flex;
+	margin-inline: -20px;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: $near-transparant;
+	padding: 20px 15px;
+	h2 {
+		text-transform: uppercase;
+		font-size: 20px;
+		font-weight: 400;
+		margin-inline: 15px;
+	}
+	p {
+		margin-inline: 12px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+}
+.our-works-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-block: 20px 10px;
+	.title {
+		margin: 0;
+	}
+}
+.our-works-body {
+	display: flex;
+	flex-wrap: wrap;
+	img {
+		flex: 0 1 calc(33.33% - 6px);
+		margin: 3px;
+		height: calc((33.33% - 6px)*0.75);
+	}
+}
+.our-works-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-block: 10px;
+	p {
+		text-transform: uppercase;
+		font-size: 20px;
+		font-weight: 200;
+		margin-bottom: 7px;
+	}
+}
+.what-we-do-header {
+	padding-block: 10px;
+}
+.what-we-do-body {
+	display: flex;
+	padding-block: 10px 40px;
+	flex-wrap: wrap;
+	.what-we-do-item {
+		flex-basis: 24%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 5px;
+		margin-block: 10px;
+		.icon-circle {
+			border-radius: 100% 100%;
+			padding: 6px;
+			background-color: $near-transparant
+        ;
+			display: flex;
+			align-items: center;
+		}
+		>* {
+			flex: 1;
+		}
+		p {
+			&:last-child {
+				flex: 3;
+			}
+		}
+	}
+}
+.from-journal-header {
+	padding-block: 8px;
+}
+.from-journal-body {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 20%;
+	.from-journal-item {
+		display: flex;
+		flex-basis: 50%;
+		margin-top: 4px;
+	}
+	.item-description {
+		display: flex;
+		flex-flow: wrap row;
+		padding: 10px;
+		* {
+			flex: 1 1 100%;
+		}
+	}
+	.date {
+		color: $color_4;
+		font-size: 12px;
+		margin: 3px;
+	}
+	.title {
+		margin: 3px;
+	}
+}
+@import url(./layout/footer);
+@media all and (max-width:768px) {
+	.our-works-body {
+		img {
+			flex: 0 1 calc(50% - 6px);
+		}
+	}
+	.what-we-do-body {
+		.what-we-do-item {
+			flex-basis: 50%;
+			flex-basis: 100%;
+		}
+	}
+	.from-journal-body {
+		.from-journal-item {
+			flex-basis: 100%;
+			flex-basis: 100%;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.item-description {
+			flex-basis: 100%;
+		}
+	}
+	header {
+		position: fixed;
+		background-color: $secondary-color;
+		left: 0;
+		right: 0;
+		top: 0;
+		flex-wrap: wrap;
+		nav {
+			flex-basis: 100%;
+			flex-wrap: wrap;
+			>* {
+				flex-basis: 100%;
+			}
+			a {
+				background: none;
+				flex-direction: column;
+				align-items: center;
+				&:hover {
+					background-color: $accent-color;
+					margin-block: unset;
+				}
+			}
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			top: 34px;
+			right: 11px;
+			width: 40px;
+			height: 4px;
+			z-index: 1;
+			background-color: $main-color;
+			pointer-events: none;
+		}
+	}
+	.about-us {
+		margin-top: 10%;
+	}
+	nav {
+		display: none;
+	}
+	.burger-menue {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		height: 54px;
+		width: 54px;
+		&:before {
+			position: absolute;
+			content: "";
+			top: 20%;
+			left: 15%;
+			width: 40px;
+			height: 4px;
+			pointer-events: none;
+			background-color: $main-color;
+		}
+		&:after {
+			position: absolute;
+			content: "";
+			top: 70%;
+			left: 15%;
+			width: 40px;
+			height: 4px;
+			background-color: $main-color;
+			pointer-events: none;
+		}
+		input {
+			height: 50px;
+			width: 50px;
+			opacity: 0;
+		}
+		&:hover {
+			background-color: $accent-color;
+		}
+		&:has(input:checked) {
+			background-color: $accent-color;
+		}
+		&:has(input:checked)~nav {
+			display: block;
+		}
+	}
+}
+	@media all and (max-width:576px) {
+		.our-works-body img{ flex: 0 1 calc(100% - 6px);
+		}		        	        
+    }

@@ -1,0 +1,86 @@
+$main: rgb(39, 2, 244);
+$color_2: white;
+$font-family_1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+$background-main: rgb(36, 36, 36);
+$background-color_3: rgb(0, 14, 165);
+
+body {
+	height: fit-content;
+	width: fit-content;
+}
+.gallery {
+	display: grid;
+	gap: 1%;
+	grid-template: 15% 29% 15% / repeat(5, 19%);
+}
+.long-image-wrap {
+	grid-area: 2/1/3/-1;
+	img {
+		object-fit: cover;
+		height: 97%;
+		width: 100%;
+	}
+}
+.small-image-wrap {
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: fill;
+	}
+}
+footer {
+	padding: 20px;
+	background-color: $background-main;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: bold;
+	font-family: $font-family_1;
+	a {
+		&:hover {
+			text-decoration-line: unset;
+			padding: 7px;
+			color: $main;
+			background-color: $background-main;
+			box-shadow: inset -2px -2px rgb(83, 83, 83);
+			border: 3px solid rgb(0, 0, 44);
+			text-transform: uppercase;
+			border-radius: 4px;
+		}
+		text-decoration-line: unset;
+		padding: 7px;
+		color: $color_2;
+		border: 3px solid rgb(0, 0, 45);
+		background-color: $background-color_3;
+		box-shadow: inset -2px -2px rgb(1, 6, 78);
+		text-transform: uppercase;
+		border-radius: 4px;
+	}
+}
+@media screen and (max-width:768px) {
+	.gallery {
+		display: grid;
+		gap: 1%;
+		grid-template: 15% 15% 29% 15% 15% / repeat(3, 33.33%);
+	}
+	.long-image-wrap {
+		grid-row: 3/4;
+		img {
+			object-fit: cover;
+		}
+	}
+}
+@media screen and (max-width:576px) {
+	.gallery {
+		display: grid;
+		gap: 1%;
+		grid-template: repeat(5, 8%) 7% repeat(5,8%) / 1fr;
+	}
+	.long-image-wrap {
+		grid-row: 6/7;
+		img {
+			object-fit: cover;
+		}
+	}
+}

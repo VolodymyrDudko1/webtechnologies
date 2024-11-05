@@ -1,0 +1,26 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	a {
+		margin: 0 1%;
+		text-align: center;
+		padding: 4px 7px;
+		border-radius: 8px;
+		text-transform: uppercase;
+		font-weight: 500;
+		color: $plain-black;
+		background-color: $near-transparant;
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+	}
+}
+.burger-menue {
+	display: none;
+}

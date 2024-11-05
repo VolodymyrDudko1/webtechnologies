@@ -1,0 +1,247 @@
+@import url(../../normalize.scss);
+@import url(colors.scss);
+@import url(typefaces.scss);
+@import url(./layout/header.scss);
+@import url(./layout/footer);
+* {
+  box-sizing: border-box;
+  font-family: "Nimbus Mono PS", "Courier New", monospace;
+  font-size: 13px;
+}
+
+body {
+  overflow-x: hidden;
+  padding-inline: 2%;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.about-us {
+  margin-top: 3%;
+  display: flex;
+  margin-inline: -20px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(18, 17, 17, 0.071);
+  padding: 20px 15px;
+}
+.about-us h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  margin-inline: 15px;
+}
+.about-us p {
+  margin-inline: 12px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.our-works-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-block: 20px 10px;
+}
+.our-works-header .title {
+  margin: 0;
+}
+
+.our-works-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.our-works-body img {
+  flex: 0 1 calc(33.33% - 6px);
+  margin: 3px;
+  height: calc((33.33% - 6px) * 0.75);
+}
+
+.our-works-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 10px;
+}
+.our-works-footer p {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 7px;
+}
+
+.what-we-do-header {
+  padding-block: 10px;
+}
+
+.what-we-do-body {
+  display: flex;
+  padding-block: 10px 40px;
+  flex-wrap: wrap;
+}
+.what-we-do-body .what-we-do-item {
+  flex-basis: 24%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  margin-block: 10px;
+}
+.what-we-do-body .what-we-do-item .icon-circle {
+  border-radius: 100% 100%;
+  padding: 6px;
+  background-color: rgba(18, 17, 17, 0.071);
+  display: flex;
+  align-items: center;
+}
+.what-we-do-body .what-we-do-item > * {
+  flex: 1;
+}
+.what-we-do-body .what-we-do-item p:last-child {
+  flex: 3;
+}
+
+.from-journal-header {
+  padding-block: 8px;
+}
+
+.from-journal-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20%;
+}
+.from-journal-body .from-journal-item {
+  display: flex;
+  flex-basis: 50%;
+  margin-top: 4px;
+}
+.from-journal-body .item-description {
+  display: flex;
+  flex-flow: wrap row;
+  padding: 10px;
+}
+.from-journal-body .item-description * {
+  flex: 1 1 100%;
+}
+.from-journal-body .date {
+  color: rgb(130, 129, 129);
+  font-size: 12px;
+  margin: 3px;
+}
+.from-journal-body .title {
+  margin: 3px;
+}
+
+@media all and (max-width: 768px) {
+  .our-works-body img {
+    flex: 0 1 calc(50% - 6px);
+  }
+  .what-we-do-body .what-we-do-item {
+    flex-basis: 50%;
+    flex-basis: 100%;
+  }
+  .from-journal-body .from-journal-item {
+    flex-basis: 100%;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .from-journal-body .item-description {
+    flex-basis: 100%;
+  }
+  header {
+    position: fixed;
+    background-color: rgb(229, 237, 244);
+    left: 0;
+    right: 0;
+    top: 0;
+    flex-wrap: wrap;
+  }
+  header nav {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+  header nav > * {
+    flex-basis: 100%;
+  }
+  header nav a {
+    background: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav a:hover {
+    background-color: rgb(168, 168, 252);
+    margin-block: unset;
+  }
+  header:before {
+    position: absolute;
+    content: "";
+    top: 34px;
+    right: 11px;
+    width: 40px;
+    height: 4px;
+    z-index: 1;
+    background-color: rgb(3, 3, 234);
+    pointer-events: none;
+  }
+  .about-us {
+    margin-top: 10%;
+  }
+  nav {
+    display: none;
+  }
+  .burger-menue {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 54px;
+    width: 54px;
+  }
+  .burger-menue:before {
+    position: absolute;
+    content: "";
+    top: 20%;
+    left: 15%;
+    width: 40px;
+    height: 4px;
+    pointer-events: none;
+    background-color: rgb(3, 3, 234);
+  }
+  .burger-menue:after {
+    position: absolute;
+    content: "";
+    top: 70%;
+    left: 15%;
+    width: 40px;
+    height: 4px;
+    background-color: rgb(3, 3, 234);
+    pointer-events: none;
+  }
+  .burger-menue input {
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+  }
+  .burger-menue:hover {
+    background-color: rgb(168, 168, 252);
+  }
+  .burger-menue:has(input:checked) {
+    background-color: rgb(168, 168, 252);
+  }
+  .burger-menue:has(input:checked) ~ nav {
+    display: block;
+  }
+}
+@media all and (max-width: 576px) {
+  .our-works-body img {
+    flex: 0 1 calc(100% - 6px);
+  }
+}

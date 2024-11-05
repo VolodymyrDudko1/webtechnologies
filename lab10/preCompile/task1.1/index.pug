@@ -1,0 +1,99 @@
+doctype html
+include ./head
+.weather-app
+  include ./main_weather
+  .other-weather
+    p.day Today
+    img(src='../icons/iconfinder_weather01.png' alt='' height='70' width='70')
+    .degrees
+      p 68&ordm;
+      p 36&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Wednesday
+    img(src='../icons/iconfinder_weather02.png' alt='' height='70' width='70')
+    .degrees
+      p 50&ordm;
+      p 39&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Thurthday
+    img(src='../icons/iconfinder_weather03.png' alt='' height='70' width='70')
+    .degrees
+      p 55&ordm;
+      p 39&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Friday
+    img(src='../icons/iconfinder_weather05.png' alt='' height='70' width='70')
+    .degrees
+      p 54&ordm;
+      p 43&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Saturday
+    img(src='../icons/iconfinder_weather06.png' alt='' height='70' width='70')
+    .degrees
+      p 67&ordm;
+      p 46&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Sunday
+    img(src='../icons/iconfinder_weather07.png' alt='' height='70' width='70')
+    .degrees
+      p 64&ordm;
+      p 50&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Monday
+    img(src='../icons/iconfinder_weather08.png' alt='' height='70' width='70')
+    .degrees
+      p 61&ordm;
+      p 50&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Tuesday
+    img(src='../icons/iconfinder_weather09.png' alt='' height='70' width='70')
+    .degrees
+      p 68&ordm;
+      p 36&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Wednesday
+    img(src='../icons/iconfinder_weather10.png' alt='' height='70' width='70')
+    .degrees
+      p 50&ordm;
+      p 39&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Thurthday
+    img(src='../icons/iconfinder_weather11.png' alt='' height='70' width='70')
+    .degrees
+      p 55&ordm;
+      p 39&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Friday
+    img(src='../icons/iconfinder_weather12.png' alt='' height='70' width='70')
+    .degrees
+      p 54&ordm;
+      p 43&ordm;
+    p Pollen 36
+  .other-weather
+    p.day Saturday
+    img(src='../icons/iconfinder_weather13.png' alt='' height='70' width='70')
+    .degrees
+      p 67&ordm;
+      p 46&ordm;
+    p Pollen 36
+  
+  each n in ["Monday", "Tuesday", "Wednesday", "Saturday"]
+    .other-weather
+      p.day= n
+      img(src='../icons/iconfinder_weather14.png' alt='' height='70' width='70')
+      .degrees
+        p 64&ordm;
+        p 50&ordm;
+      p='Pollen 37'
+
+

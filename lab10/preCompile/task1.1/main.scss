@@ -1,0 +1,68 @@
+$lighter_grey: rgb(99, 99, 99);
+$darker_grey: rgb(45, 45, 45);
+$font-family_1: Arial, Helvetica, sans-serif;
+@import url(../../normalize.scss);
+* {
+	box-sizing: border-box;
+	font-family: $font-family_1;
+	color: $lighter_grey;
+	font-size: 26px;
+}
+.weather-app {
+	display: flex;
+	flex-direction: column;
+	padding: 3%;
+}
+.tommorow-weather {
+	display: flex;
+	flex-flow: wrap row;
+	align-content: flex-start;
+	h1 {
+		flex-basis: 100%;
+		margin: 0;
+	}
+	p {
+		flex-basis: 100%;
+		margin: 0;
+	}
+	.degrees-main {
+		flex-basis: 10%;
+		font-size: 60px;
+		padding-inline: 5px;
+	}
+	.farenheit {
+		flex-basis: 15%;
+		font-size: 30px;
+	}
+	ul {
+		flex-basis: 50%;
+		list-style: none;
+	}
+}
+h1 {
+	font-size: 55px;
+	font-weight: 500;
+}
+.other-weather {
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid grey;
+	align-items: center;
+	.degrees {
+		font-size: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding-block: 4%;
+		p {
+			margin: 0;
+			&:first-child {
+				color: $darker_grey;
+			}
+		}
+	}
+	.day {
+		font-weight: bold;
+		flex-basis: 33%;
+	}
+}
