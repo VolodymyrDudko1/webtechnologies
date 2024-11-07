@@ -1,7 +1,8 @@
 $lighter_grey: rgb(99, 99, 99);
 $darker_grey: rgb(45, 45, 45);
 $font-family_1: Arial, Helvetica, sans-serif;
-@import url(../../normalize.scss);
+
+@import '../../normalize.scss';
 * {
 	box-sizing: border-box;
 	font-family: $font-family_1;

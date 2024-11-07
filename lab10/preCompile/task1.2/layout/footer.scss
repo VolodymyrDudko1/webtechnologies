@@ -1,13 +1,21 @@
 $color_1: aliceblue;
 $background-color_1: rgb(23, 23, 23);
 
+@function margin($n) {
+	$sequence: 0 1;
+	@for $_ from 1 through $n {
+	  $new: nth($sequence, length($sequence)) + nth($sequence, length($sequence) - 1);
+	  $sequence: append($sequence, $new);
+	}
+	@return nth($sequence, length($sequence));
+  }
 footer {
 	background-color: $background-color_1;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-block: 15px 30px;
+	padding-block: margin(6) * 1px 30px;
 	color: $color_1;
 	.socials {
 		flex-basis: 20%;

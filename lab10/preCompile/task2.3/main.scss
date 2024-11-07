@@ -1,0 +1,25 @@
+@import '../../normalize.scss';
+@import '../mixins/mixins.scss';
+.structure {
+	display: grid;
+	grid-template: 4em 44em 4em / 12em 44em 9em;
+	gap: 1em;
+	padding: 2em;
+	>* {
+		padding: 1em;
+		background-color: rgb(255, 255, 11);
+	}
+}
+.kvazi-header {
+	grid-column: 1/-1;
+}
+.kvazi-nav {
+	grid-row: 2/-1;
+}
+.kvazi-article {
+	grid-area: 2/2/-2/-2;
+}
+.kvazi-footer {
+	grid-column: 2/-1;
+}
+@include footer;

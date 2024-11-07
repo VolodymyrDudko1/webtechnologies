@@ -1,0 +1,72 @@
+@import '../mixins/mixins.scss';
+@import '../../normalize.scss';
+$color_1: rgb(255, 255, 255);
+$color_2: rgb(39, 2, 244);
+$font-family_1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+$background-color_1: rgb(243, 243, 7);
+$background-color_2: rgb(36, 36, 36);
+$background-color_3: rgb(0, 0, 0);
+$background-color_4: rgb(0, 14, 165);
+
+.tree {
+	display: grid;
+	grid-template: repeat(6, 1fr)/repeat(12, 1fr);
+	font-size: 20px;
+	color: $color_1;
+	gap: 5px;
+	text-align: center;
+	padding: 7px;
+	>* {
+		background-color: $background-color_1;
+		padding: 5px;
+	}
+}
+.first-layer {
+	grid-column: span 12;
+}
+.second-layer {
+	grid-column: span 6;
+}
+.third-layer {
+	grid-column: span 4;
+}
+.forth-layer {
+	grid-column: span 3;
+}
+.fifth-layer {
+	grid-column: span 2;
+}
+footer {
+	padding: 20px;
+	background-color: $background-color_2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-weight: bold;
+	font-family: $font-family_1;
+	a {
+		&:hover {
+			text-decoration-line: unset;
+			padding: 7px;
+			color: $color_2;
+			background-color: $background-color_3;
+			box-shadow: inset -2px -2px rgb(83, 83, 83);
+			border: 3px solid rgb(0, 0, 44);
+			text-transform: uppercase;
+			border-radius: 4px;
+		}
+		text-decoration-line: unset;
+		padding: 7px;
+		color: $color_1;
+		border: 3px solid rgb(0, 0, 45);
+		background-color: $background-color_4;
+		box-shadow: inset -2px -2px rgb(1, 6, 78);
+		text-transform: uppercase;
+		border-radius: 4px;
+	}
+}

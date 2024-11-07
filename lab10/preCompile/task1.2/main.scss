@@ -1,16 +1,10 @@
 
 
-@import url(../../normalize.scss);
+@import '../../normalize.scss';
 
-@import url(colors.scss);
-@import url(typefaces.scss);
-$font-family-main: 'Nimbus Mono PS', 'Courier New', monospace;
-$plain-black: rgb(0, 0, 0);
-$main-color: rgb(3, 3, 234);
-$color_4: rgb(130, 129, 129);
-$near-transparant: rgba(18, 17, 17, 0.071);
-$secondary-color: rgb(229, 237, 244);
-$accent-color: rgb(168, 168, 252);
+@import 'colors.scss';
+@import 'typefaces.scss';
+
 * {
 	box-sizing: border-box;
 	font-family: $font-family-main;
@@ -23,7 +17,7 @@ body {
 a {
 	text-decoration-line: none;
 }
-@import url(./layout/header.scss);
+@import './layout/header.scss';
 .about-us {
 	margin-top: 3%;
 	display: flex;
@@ -141,7 +135,7 @@ a {
 		margin: 3px;
 	}
 }
-@import url(./layout/footer);
+@import './layout/footer';
 @media all and (max-width:768px) {
 	.our-works-body {
 		img {
@@ -248,6 +242,7 @@ a {
 		}
 	}
 }
+
 	@media all and (max-width:576px) {
 		.our-works-body img{ flex: 0 1 calc(100% - 6px);
 		}		        	        
