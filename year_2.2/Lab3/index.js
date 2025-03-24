@@ -28,7 +28,7 @@ Object.defineProperty(window, "third", {
 });
 Object.defineProperty(window, "forth", {
     get: function () {
-        let x=[1, 2, 3, 4, 5, 6];
+        let x=[1, 2, 3, 4, 5, 6, 2];
         console.log(evenSumm(x));
     }   
 });
@@ -54,8 +54,8 @@ Object.defineProperty(window, "fifth", {
 Object.defineProperty(window, "sixth", {
     get: function () {
         let x=2;
-        let y=3;
-        console.log(exp(2, 3));
+        let y=7;
+        console.log(exp(x, y));
     }   
 });
 function natSum(){
