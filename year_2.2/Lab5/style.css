@@ -1,0 +1,237 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    --main_blue: #524eee;
+}
+
+section.task1 {
+    background-color: #090922;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 66%;
+    margin-inline: auto;
+    padding-inline: 20px ;
+    padding-block: 130px;
+    gap: 5px;
+}
+.light-bulb{
+    width: 300px;
+    height: 300px;
+    
+}
+.radio-item + .radio-item {
+	margin-top: 15px;
+}
+.radio-item label {
+	display: block;
+	padding: 20px 60px;
+	background: #1d1d42;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	min-width: 250px;
+	white-space: nowrap;
+	position: relative;
+	transition: 0.4s ease-in-out 0s;
+    color:aliceblue;
+}
+.radio-item label:after,
+.radio-item label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+.radio-item label:after {
+	height: 19px;
+	width: 19px;
+	border: 2px solid var(--main_blue);
+	left: 19px;
+	top: calc(50% - 12px);
+}
+.radio-item label:before {
+	background: var(--main_blue);
+	height: 20px;
+	width: 20px;
+	left: 21px;
+	top: calc(50%-5px);
+	transform: scale(5);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s ease-in-out 0s;
+}
+[type="radio"]{
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+.radio-item [type="radio"]:checked ~ label {
+	border-color: var(--main_blue);
+}
+.radio-item [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
+button:has(img){
+    
+    background-color: transparent;
+    border: 0;
+}
+.light{
+    position: absolute;
+    left: 435px;
+    top: 40px;
+    border-radius: 1000px;
+    visibility: hidden;
+    
+}
+
+.btn{
+    margin: 10px 10px;
+    display: inline-block;
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    padding: 17px 30px;
+    border: 0;
+    color: #fff;
+    font-size: 17.5px;
+    border: 2px solid transparent;
+    border-color: #fff;
+    
+    background: transparent;
+    font-weight: 800;
+    line-height: 30px;
+    transition: background,color .1s ease-in-out;
+    
+    
+}
+.btn:hover {
+    background-color: var(--main_blue);
+    color: #fff;
+}
+section.task2{
+    background-color: #131344;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 66%;
+    margin-inline: auto;
+    padding-inline: 20px ;
+    padding-block: 130px;
+    gap: 5px;
+}
+section.task3{
+    background-color: #090922;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 66%;
+    margin-inline: auto;
+    padding-inline: 20px ;
+    padding-block: 130px;
+    gap: 5px;
+    color: aliceblue;
+}
+.traffic-light{
+    background-color: red;
+    border-radius: 1000px;
+    padding: 50px;
+}
+.color-name p{
+    color: aliceblue;
+}
+#clock {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.countdown-input {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+#clock{
+    color: aliceblue;
+}
+
+.current-day {
+    background-color: #3498db;
+    color: white;
+}
+
+.selected-birthday {
+    background-color: #2ecc71;
+    color: white;
+}
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border:2px solid aliceblue ;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+    color:#1d1d42;
+}
+section.task4{
+    background-color: #131344;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 66%;
+    margin-inline: auto;
+    padding-inline: 20px ;
+    padding-block: 130px;
+    gap: 5px;
+    color:aliceblue;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="task1">
+        <button onclick="lightSwitch()">
+            <img class="light-bulb" src="res/lightbulb.png">
+            <img class="light" src="res/light.png" width="400" height="400">
+        </button>
+        
+        
+
+        <div class="radio-item">
+            <input type="radio" id="normal" name="current-light-bulb" value="normal" checked onchange="changeLightBulb()">
+            <label for="normal">Normal</label>
+        </div>
+        
+        <div class="radio-item">
+            <input type="radio" id="old" name="current-light-bulb" value="old" onchange="changeLightBulb()">
+            <label for="old">Old</label>
+        </div>
+        
+        <div class="radio-item">
+            <input type="radio" id="sun" name="current-light-bulb" value="sun" onchange="changeLightBulb()">
+            <label for="sun">Sun</label>
+        </div>
+        
+        <button class="btn" onclick="changeBrightness()">change brightness</button>
+    </section>
+    <section class="task2">
+        <div class="traffic-light"></div>
+        <div class="color-name">
+            <p>RED</p>
+        </div>
+        <button class="btn" onclick="changeDuration('red')" value="red">Change red</button>
+        <button class="btn" onclick="changeDuration('yellow')" value="yellow">Change yellow</button>
+        <button class="btn" onclick="changeDuration('green')" value="green">Change green</button>
+        <button class="btn" onclick="nextColor()" >Next Color</button>
+    </section>
+    <section class="task3">
+        
+        <div class="section">
+            <div id="clock"></div>
+        </div>
+
+    
+        <div class="section">
+            <h3>Countdown</h3>
+            <input type="datetime-local" id="countdownDate" class="countdown-input">
+            <div id="countdown"></div>
+        </div>
+
+    
+        <div class="section">
+            <h3>Calendar</h3>
+            <input type="month" id="calendarMonth" value="">
+            <div id="calendar" class="calendar"></div>
+        </div>
+
+    
+        <div class="section">
+            <h3>Till next birthday</h3>
+            <div id="birthdayCountdown"></div>
+        </div>
+    </section>
+    <section class="task4">
+         
+         <div class="form-section">
+            <h2>Add product</h2>
+            <input type="text" id="productName" placeholder="Name">
+            <input type="number" id="productPrice" placeholder="Price">
+            <input type="number" id="productQuantity" placeholder="Ammount">
+            <button onclick="addProduct()">Add</button>
+        </div>
+
+        
+        <div class="form-section">
+            <h2>Search product</h2>
+            <input type="text" id="searchInput" placeholder="Product Name">
+            <button onclick="searchProduct()">Search</button>
+            <div id="searchResult"></div>
+        </div>
+
+        
+        <h2>Product list</h2>
+        <table id="productsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Ammount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productsList"></tbody>
+        </table>
+
+        
+        <div class="form-section">
+            <h2>Order</h2>
+            <input type="text" id="orderProductId" placeholder="product ID">
+            <input type="number" id="orderQuantity" placeholder="Ammount">
+            <button onclick="placeOrder()">Order</button>
+        </div>
+    </section>
+</body>
+</html>
