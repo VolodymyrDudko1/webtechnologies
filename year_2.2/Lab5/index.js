@@ -3,6 +3,7 @@ function lightSwitch(){
     let light = document.querySelector(".light");
     let newVisibility = light.style.visibility=="visible"?"hidden":"visible";
     light.style.visibility=newVisibility;
+    light.className
     
     if(lightTimer!=0&&newVisibility=="visible"){
         clearTimeout(lightSwitch);

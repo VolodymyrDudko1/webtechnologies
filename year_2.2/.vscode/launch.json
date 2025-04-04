@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Lab4\\index.js",
+            "program": "${workspaceFolder}\\Sandbox\\index.js",
             "console": "integratedTerminal"
         }
     ]
