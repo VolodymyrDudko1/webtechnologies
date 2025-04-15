@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Digital'; /*a name to be used later*/
+    src: url('./fonts/digital-7.ttf'); /*URL to font*/
+}
+*{
+    font-family:"Digital", 'Times New Roman', Times, serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(res/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#message-box{
+    position:absolute;
+    
+    left: 500px;
+    
+    text-transform: capitalize;
+    color: antiquewhite;
+    pointer-events: none;
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.365);
+    z-index: 2;
+}
+#message-box p{
+    margin: 0;
+}
+#enemy{
+    position:absolute;
+    background-image: url(res/fly/piccolo_fly.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    top:40%;
+    left:40%;
+}
+.hide{
+    display: none;
+}
+#restart-btn{
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    z-index: 3;
+    padding: 20px 17px 15px 20px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.852);
+    color: antiquewhite;
+    font-weight: 800;
+    font-size: 80px;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.468);
+}
+.fly{
+    animation: flying  2s steps(100) infinite;
+    
+}
+@keyframes flying {
+    from {
+      left:0px
+    }
+    to {
+      left:500px
+    }
+  }
+#points-box{
+    position:absolute;
+    top:50px;
+    right: 50px;
+    font-size: 24px;
+    color: antiquewhite;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.365);
+    border-radius: 5px;
+    padding: 20px;
+}  
