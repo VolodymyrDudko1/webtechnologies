@@ -1,0 +1,106 @@
+@font-face {
+    font-family: spooky;
+    src: url(res/fonts/DarkSilence-2OeXd.ttf);
+}
+*{
+    color: antiquewhite;
+    font-family: spooky;
+}
+body{
+    background-image: url(res/background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+#settings-panel{
+
+    position: absolute;
+    top:25vh;
+    left:30vw;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    flex-direction: column;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.701);
+    box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.363);
+
+}
+.panel-name p{
+    font-size: 20px;
+}
+.radio-button{
+    padding: 5px;
+    
+}
+input[type="radio"]:checked{
+    color: black;
+}
+input[type="text"]{
+    color: black;
+}
+.selections{
+    padding:10px;
+    display: flex;
+    gap: 15px;
+}
+.btn-container{
+    display: flex;
+    align-self: stretch;
+    justify-content: space-between;
+}
+.settings-btn{
+    background-color: transparent;
+    padding: 10px 4px 4px 6px;
+    border: none;
+}
+select{
+    background-color: black;
+}
+#cards-container{
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    height: 90vh;
+    padding: 10px;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    column-gap: 20px;
+
+}
+.card{
+    background: url(./res/sigil.png),
+    linear-gradient(160deg,rgba(155, 42, 42, 1) 0%, rgba(61, 0, 0, 1) 26%, rgba(204, 73, 73, 1) 72%, rgba(26, 0, 0, 1) 100%);
+    background-size: contain;
+    background-position: -3px 27px, 0 0;
+    background-repeat: no-repeat;
+    border-radius: 14px;
+    height: 100%;
+    aspect-ratio: 3/4;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.614);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    
+}
+.card p{
+    display: block;
+    margin: 0;
+    
+}
+.open{
+    background: linear-gradient(160deg,rgba(155, 42, 42, 1) 0%, rgba(61, 0, 0, 1) 26%, rgba(204, 73, 73, 1) 72%, rgba(26, 0, 0, 1) 100%);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#scoreboard{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.701);
+
+}
