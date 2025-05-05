@@ -104,3 +104,11 @@ select{
     background-color: rgba(0, 0, 0, 0.701);
 
 }
+.message-box{
+    position: absolute;
+    top:25vh;
+    left:30vw;
+    display: none;
+    box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.363);
+    background-color: rgba(0, 0, 0, 0.701);
+}

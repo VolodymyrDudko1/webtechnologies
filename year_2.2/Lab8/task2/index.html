@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Carousel Web Component</title>
+  <style>
+    custom-carousel {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+
+<custom-carousel></custom-carousel>
+
+<script>
+class CustomCarousel extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({mode: 'open'});
+    this.current = 0;
+    this._autoplayTimer = null;
+    this._config = {
+      slides: [
+        { type: 'img', src: 'https://picsum.photos/id/237/800/400', alt: 'Собака' },
+        { type: 'text', content: '<h2>Текстовий слайд</h2><p>Lorem ipsum</p>' },
+        { type: 'img', src: 'https://picsum.photos/id/238/800/400', alt: 'Гори' },
+        { type: 'video', src: 'https://www.w3schools.com/html/mov_bbb.mp4', alt: 'Відео', controls: true },
+      ],
+      transition: 500,      // ms
+      autoplay: 3000,       // ms, 0 = вимкнено
+      arrows: true,
+      dots: true
+    };
+  }
+
+  connectedCallback() {
+    
+    if (this.config) Object.assign(this._config, this.config);
+    this.render();
+    this.initEvents();
+    this.startAutoplay();
+  }
+
+  set config(cfg) {
+    this._config = Object.assign(this._config, cfg);
+    this.current = 0;
+    this.render();
+    this.initEvents();
+    this.startAutoplay();
+  }
+
+  get config() {
+    return this._config;
+  }
+
+  render() {
+    const {slides, transition, arrows, dots} = this._config;
+    const styles = `
+      <style>
+        :host {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          border-radius: 14px;
+          box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+          background: #fff;
+        }
+        .carousel-track {
+          display: flex;
+          transition: transform ${transition}ms cubic-bezier(.77,0,.18,1);
+          will-change: transform;
+        }
+        .carousel-slide {
+          min-width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #f8f8ff;
+          height: 400px;
+          position: relative;
+        }
+        .carousel-slide img, .carousel-slide video {
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 10px;
+          display: block;
+        }
+        .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0,0,0,0.5);
+          color: #fff;
+          border: none;
+          border-radius: 100%;
+          width: 40px;
+          height: 40px;
+          font-size: 22px;
+          cursor: pointer;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+        }
+        .carousel-arrow:hover {
+          background: #007bff;
+        }
+        .carousel-arrow.left { left: 16px; }
+        .carousel-arrow.right { right: 16px; }
+        .carousel-dots {
+          position: absolute;
+          left: 50%;
+          bottom: 18px;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 10px;
+          z-index: 2;
+        }
+        .carousel-dot {
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background: rgba(0,0,0,0.25);
+          border: none;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .carousel-dot.active {
+          background: #007bff;
+        }
+        @media (max-width: 900px) {
+          .carousel-slide { height: 260px; }
+        }
+        @media (max-width: 600px) {
+          .carousel-slide { height: 160px; }
+        }
+      </style>
+    `;
+    const slidesHtml = slides.map(slide => {
+      if (slide.type === 'img') {
+        return `<div class="carousel-slide"><img src="${slide.src}" alt="${slide.alt||''}"></div>`;
+      } else if (slide.type === 'video') {
+        return `<div class="carousel-slide"><video src="${slide.src}" ${slide.controls ? 'controls' : ''} style="background:#000"></video></div>`;
+      } else {
+        return `<div class="carousel-slide">${slide.content}</div>`;
+      }
+    }).join('');
+    const arrowsHtml = arrows ? `
+      <button class="carousel-arrow left" aria-label="Попередній слайд">&#10094;</button>
+      <button class="carousel-arrow right" aria-label="Наступний слайд">&#10095;</button>
+    ` : '';
+    const dotsHtml = dots ? `
+      <div class="carousel-dots">
+        ${slides.map((_,i) => `<button class="carousel-dot${i===this.current?' active':''}" aria-label="Слайд ${i+1}"></button>`).join('')}
+      </div>
+    ` : '';
+    this.shadowRoot.innerHTML = `
+      ${styles}
+      <div class="carousel">
+        <div class="carousel-track" style="transform:translateX(-${this.current*100}%);">
+          ${slidesHtml}
+        </div>
+        ${arrowsHtml}
+        ${dotsHtml}
+      </div>
+    `;
+  }
+
+  initEvents() {
+    const {slides, arrows, dots} = this._config;
+    const track = this.shadowRoot.querySelector('.carousel-track');
+    // Arrows
+    if (arrows) {
+      this.shadowRoot.querySelector('.carousel-arrow.left').onclick = () => this.moveTo(this.current-1);
+      this.shadowRoot.querySelector('.carousel-arrow.right').onclick = () => this.moveTo(this.current+1);
+    }
+    // Dots
+    if (dots) {
+      this.shadowRoot.querySelectorAll('.carousel-dot').forEach((dot,i) => {
+        dot.onclick = () => this.moveTo(i);
+      });
+    }
+    // Pause on hover
+    this.shadowRoot.querySelector('.carousel').onmouseenter = () => this.stopAutoplay();
+    this.shadowRoot.querySelector('.carousel').onmouseleave = () => this.startAutoplay();
+    // Keyboard
+    this._keydownHandler = (e) => {
+      if (e.key === 'ArrowLeft') this.moveTo(this.current-1);
+      if (e.key === 'ArrowRight') this.moveTo(this.current+1);
+    };
+    window.addEventListener('keydown', this._keydownHandler);
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('keydown', this._keydownHandler);
+    this.stopAutoplay();
+  }
+
+  moveTo(idx) {
+    const slides = this._config.slides;
+    this.current = (idx + slides.length) % slides.length;
+    // Анімація
+    const track = this.shadowRoot.querySelector('.carousel-track');
+    track.style.transition = `transform ${this._config.transition}ms cubic-bezier(.77,0,.18,1)`;
+    track.style.transform = `translateX(-${this.current*100}%)`;
+    // Оновлення пагінації
+    this.shadowRoot.querySelectorAll('.carousel-dot').forEach((dot,i) => {
+      dot.classList.toggle('active', i===this.current);
+    });
+  }
+
+  startAutoplay() {
+    this.stopAutoplay();
+    if (this._config.autoplay > 0) {
+      this._autoplayTimer = setInterval(() => {
+        this.moveTo(this.current+1);
+      }, this._config.autoplay);
+    }
+  }
+  stopAutoplay() {
+    if (this._autoplayTimer) clearInterval(this._autoplayTimer);
+  }
+}
+customElements.define('custom-carousel', CustomCarousel);
+</script>
+</body>
+</html>

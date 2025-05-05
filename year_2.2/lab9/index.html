@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <ul class="tab-group">
+        <li class="tab active"><a href="#login">Авторизація</a></li>
+        <li class="tab"><a href="#signup">Реєстрація</a></li>
+      </ul>
+      <div class="tab-content">
+        
+        <form id="login" class="form active" novalidate>
+          <div class="form-group">
+            <label for="login-username">Username*</label>
+            <input type="text" id="login-username" autocomplete="username" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password*</label>
+            <div class="password-wrapper">
+              <input type="password" id="login-password" minlength="6" autocomplete="current-password" required>
+              <span class="toggle-password">&#128065;</span>
+            </div>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Запам'ятати мене</label>
+          </div>
+          <button type="submit">Увійти</button>
+          <div class="success-message"></div>
+        </form>
+        
+        <form id="signup" class="form" novalidate>
+          <div class="form-group">
+            <label for="first-name">First Name*</label>
+            <input type="text" id="first-name" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name*</label>
+            <input type="text" id="last-name" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password*</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" minlength="6" required>
+              <span class="toggle-password">&#128065;</span>
+            </div>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password*</label>
+            <div class="password-wrapper">
+              <input type="password" id="confirm-password" minlength="6" required>
+              <span class="toggle-password">&#128065;</span>
+            </div>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (+380...)*</label>
+            <input type="text" id="phone" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Date Birth*</label>
+            <input type="date" id="birthdate" required>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="sex">Sex*</label>
+            <select id="sex" required>
+              <option value="">Оберіть стать</option>
+              <option value="male">Чоловіча</option>
+              <option value="female">Жіноча</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="country">Country*</label>
+            <select id="country" required>
+              <option value="">Оберіть країну</option>
+              <option value="ua">Україна</option>
+              <option value="de">Німеччина</option>
+              <option value="pl">Польща</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="city">City*</label>
+            <select id="city" disabled required>
+              <option value="">Спочатку оберіть країну</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+          <button type="submit">Зареєструватися</button>
+          <div class="success-message"></div>
+        </form>
+      </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

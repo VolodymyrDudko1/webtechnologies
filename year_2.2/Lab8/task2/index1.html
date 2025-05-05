@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board - Drag & Drop</title>
+  <style>
+    body {
+      background: #f4f6fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .kanban-board {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 10px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .kanban-column {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      width: 320px;
+      min-width: 220px;
+      padding: 18px 12px 24px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    .kanban-column h2 {
+      text-align: center;
+      margin: 0 0 12px 0;
+      font-size: 1.2em;
+      color: #007bff;
+      letter-spacing: 1px;
+    }
+    .kanban-tasks {
+      flex: 1;
+      min-height: 60px;
+      transition: background 0.2s;
+      padding: 4px 0;
+      border-radius: 8px;
+    }
+    .kanban-tasks.drag-over {
+      background: #e3f0fc;
+      border: 2px dashed #007bff;
+    }
+    .kanban-task {
+      background: #f9fbff;
+      border: 1.5px solid #dbeafe;
+      border-radius: 7px;
+      padding: 14px 10px;
+      margin-bottom: 12px;
+      font-size: 1em;
+      color: #222;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      cursor: grab;
+      transition: box-shadow 0.2s, background 0.2s;
+      user-select: none;
+    }
+    .kanban-task.dragging {
+      opacity: 0.6;
+      background: #e0e7ef;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    @media (max-width: 900px) {
+      .kanban-board {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+      }
+      .kanban-column {
+        width: 95vw;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="kanban-board">
+    <div class="kanban-column" data-status="todo">
+      <h2>To Do</h2>
+      <div class="kanban-tasks" id="todo-tasks">
+        <div class="kanban-task" draggable="true" id="task-1">Зробити макет головної сторінки</div>
+        <div class="kanban-task" draggable="true" id="task-2">Підготувати презентацію для замовника</div>
+      </div>
+    </div>
+    <div class="kanban-column" data-status="inprogress">
+      <h2>In Progress</h2>
+      <div class="kanban-tasks" id="inprogress-tasks">
+        <div class="kanban-task" draggable="true" id="task-3">Верстка сторінки “Контакти”</div>
+      </div>
+    </div>
+    <div class="kanban-column" data-status="done">
+      <h2>Done</h2>
+      <div class="kanban-tasks" id="done-tasks">
+        <div class="kanban-task" draggable="true" id="task-4">Підключити Google Analytics</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Drag and Drop logic
+    let draggedTask = null;
+
+    document.querySelectorAll('.kanban-task').forEach(task => {
+      task.addEventListener('dragstart', function(e) {
+        draggedTask = this;
+        setTimeout(() => this.classList.add('dragging'), 0);
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData('text/plain', this.id);
+      });
+      task.addEventListener('dragend', function() {
+        this.classList.remove('dragging');
+        draggedTask = null;
+      });
+    });
+
+    document.querySelectorAll('.kanban-tasks').forEach(column => {
+      column.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('drag-over');
+      });
+      column.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+      column.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        const taskId = e.dataTransfer.getData('text/plain');
+        const task = document.getElementById(taskId);
+        if (task && this !== task.parentNode) {
+          this.appendChild(task);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

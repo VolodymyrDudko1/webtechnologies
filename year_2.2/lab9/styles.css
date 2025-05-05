@@ -1,0 +1,137 @@
+body {
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 32px 24px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.tab-group {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  border-bottom: 2px solid #eee;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+}
+.tab a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.tab.active a {
+  color: #222;
+  border-bottom: 2px solid #007bff;
+}
+.form {
+  display: none;
+}
+.form.active {
+  display: block;
+}
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.2s;
+  background: #f8faff;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+input:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+input.error, select.error {
+  border-color: #dc3545;
+}
+input.success, select.success {
+  border-color: #28a745;
+}
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  min-height: 18px;
+  display: block;
+}
+.success-message {
+  color: #28a745;
+  font-size: 15px;
+  margin-top: 12px;
+  text-align: center;
+  display: none;
+}
+.password-wrapper {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  color: #888;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.checkbox-group label {
+  margin: 0 0 0 8px;
+  font-weight: normal;
+}
+button[type="submit"] {
+  background: linear-gradient(90deg, #66a6ff 0%, #89f7fe 100%);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%);
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 16px 5px;
+    max-width: 98vw;
+  }
+}

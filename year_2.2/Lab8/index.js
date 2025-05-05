@@ -9,6 +9,9 @@ let rowsCount=0;
 let columnsCount=0;
 let difficulty=0;
 
+let cardsCount;
+
+
 let otherTurn=false;
 let timeForRounds1=[];
 let timeForRounds2=[];
@@ -25,7 +28,8 @@ function apply(){
     multiplayer=document.getElementById("pl_count").checked;
     rowsCount=parseInt(document.getElementById("rows").value);
     columnsCount=parseInt(document.getElementById("columns").value);
-    difficulty=parseInt(document.querySelectorAll("input[type=\"radio\"]:checked").value);
+    difficulty=parseInt(document.querySelector("input[type=\"radio\"]:checked").value);
+    
     rounds=parseInt(document.getElementById("rounds"));
     document.getElementById("settings-panel").style.display="none";
     desiredState="Generate";
@@ -53,28 +57,24 @@ function increaseTurnCount(){
         document.getElementById("turns2").innerText=parseInt(document.getElementById("turns2").innerText)+1;
     }
 }
-function isAllWs(nod) {
-    return !/[^\t\n\r ]/.test(nod.textContent);
-  }
-function isIgnorable(nod) {
-    return (
-      nod.nodeType === 8 || 
-      (nod.nodeType === 3 && isAllWs(nod))
-    ); 
-  }
+// function isAllWs(nod) {
+//     return !/[^\t\n\r ]/.test(nod.textContent);
+//   }
+// function isIgnorable(nod) {
+//     return (
+//       nod.nodeType === 8 || 
+//       (nod.nodeType === 3 && isAllWs(nod))
+//     ); 
+//   }
 function areCards(){
-    cardDeck.childNodes.forEach(element => {
-        if(!isIgnorable(element)){
+    cardDeck.querySelectorAll("div.cards").forEach((element) => {
+        
             if(element.style.visibility!=="hidden"||element.style.visibility==""){
                 return true;
             }
             console.log(element);
-        }
-        
-        
         
     });
-    console.log(cardDeck.childNodes);
     return false;
 }
 function openCard(card){
@@ -89,11 +89,10 @@ function openCard(card){
         card.innerHTML=`<p>${values[card.id]}</p>`;
         if(values[parseInt(openedCard.id)]==values[parseInt(card.id)]){
             setTimeout(function(){
+                cardsCount-=2;
                 card.style.visibility="hidden";
                 openedCard.style.visibility="hidden";
-                if(multiplayer){
-                    otherTurn=!otherTurn;
-                }
+                
                 if(!otherTurn){
                     document.getElementById("moves1").innerText=parseInt(document.getElementById("moves1").innerText)+1;
                     
@@ -101,19 +100,24 @@ function openCard(card){
                     document.getElementById("moves2").innerText=parseInt(document.getElementById("moves2").innerText)+1;
                     
                 }
+                if(multiplayer){
+                    otherTurn=!otherTurn;
+                }
                 // console.log(areCards());
-                if(areCards()){
+                if(cardsCount!==0){
                     desiredState="FirstPick";
                 }else{
                     rounds--;
                     if(rounds!==0){
                         document.getElementById("moves1").innerText="0";
-                        document.getElementById("moves1").innerText="0";
+                        document.getElementById("moves2").innerText="0";
                         clearInterval(timer1);
                         clearInterval(timer2);
+                        timeForRounds1.push(parseInt(document.getElementById("timer1").innerText));
+                        timeForRounds2.push(parseInt(document.getElementById("timer2").innerText));
                         desiredState="Generate";
                     }else{
-                        desiredState="Won";
+                        desiredState="Win";
                     }
                 }
             },2000);
@@ -123,9 +127,7 @@ function openCard(card){
                 openedCard.classList.remove("open");
                 card.innerText="";
                 openedCard.innerText="";
-                if(multiplayer){
-                    otherTurn=!otherTurn;
-                }
+                
                 if(!otherTurn){
                     document.getElementById("moves1").innerText=parseInt(document.getElementById("moves1").innerText)+1;
                     
@@ -133,12 +135,15 @@ function openCard(card){
                     document.getElementById("moves2").innerText=parseInt(document.getElementById("moves2").innerText)+1;
                     
                 }
+                if(multiplayer){
+                    otherTurn=!otherTurn;
+                }
             },1500);
         }
     }
 }  
 function makeTimer1(){
-    time1=difficulty==1?540:difficulty==2?360:180;
+    time1=difficulty==1?180:difficulty==2?360:540;
     return setInterval(function(){
         if(!otherTurn){
             document.getElementById("timer1").innerText=(--time1);
@@ -146,17 +151,20 @@ function makeTimer1(){
     },1000);
 }
 function makeTimer2(){
-    time2=difficulty==1?540:difficulty==2?360:180;
+    time2=difficulty==1?180:difficulty==2?360:540;
     return setInterval(function(){
-        if(!otherTurn){
+        if(otherTurn){
             document.getElementById("timer2").innerText=(--time2);
         }
     },1000);
 }
 function generate(){
+    
+
     cardDeck.style.gridTemplate=`repeat(${rowsCount}, 1fr) / repeat(${columnsCount}, 1fr)`;
-    let cardsCount=rowsCount*columnsCount;
+    cardsCount=rowsCount*columnsCount;
     cardsCount-=cardsCount%2;
+    cardDeck.innerHTML="";
     for(let i=0; i<cardsCount; ++i){
         cardDeck.innerHTML+=`
         <div class="card" onclick="openCard(this)" id="${i}">
@@ -170,9 +178,9 @@ function generate(){
     }
     
     shuffle(values);
-    timer1=makeTimer1;
+    timer1=makeTimer1();
     if(multiplayer){
-        timer2=makeTimer2;
+        timer2=makeTimer2();
     }
     desiredState="FirstPick";
 }
@@ -191,12 +199,17 @@ setInterval(function(){
             case "SecondPick":
                 break;
             case "Lose":
+                document.getElementById("message-box").innerHTML=`<p>You lost</p><button onclick="reset()">Again</button>`;
+
                 break;
             case "FirstPlayerWon" :
+                document.getElementById("message-box").innerHTML=`<h2>First player win</h2><p>${timeForRounds1.toString()}</p><button onclick="reset()">Again</button>`;
                 break;
             case "SecondPlayerWon":
+                document.getElementById("message-box").innerHTML=`<h2>Second player win</h2><p>${timeForRounds2.toString()}</p><button onclick="reset()">Again</button>`;
                 break;       
             case "Win":
+                document.getElementById("message-box").innerHTML=`<h2>Win</h2><p>${timeForRounds1.toString()}</p><p>${timeForRounds2.toString()}</p><button onclick="reset()">Again</button>`;
                 break;                
         }
     }
