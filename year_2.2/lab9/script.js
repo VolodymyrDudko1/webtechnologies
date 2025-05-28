@@ -194,6 +194,9 @@ document.getElementById("signup").addEventListener("submit", function(e) {
     this.querySelectorAll('.error-message').forEach(msg => msg.textContent = '');
     citySelect.disabled = true;
     citySelect.innerHTML = '<option value="">Спочатку оберіть країну</option>';
+    setTimeout(function(){
+      location.assign("../Lab10/index.html");
+    },2000);
   } else {
     successMsg.style.display = "none";
   }
@@ -229,6 +232,9 @@ document.getElementById("login").addEventListener("submit", function(e) {
     successMsg.style.display = "block";
     this.querySelectorAll("input").forEach(el => el.classList.remove("success", "error"));
     this.querySelectorAll('.error-message').forEach(msg => msg.textContent = '');
+    setTimeout(function(){
+      location.assign("../Lab10/index.html");
+    },2000);
   } else {
     successMsg.style.display = "none";
   }

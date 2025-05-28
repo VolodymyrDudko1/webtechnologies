@@ -66,17 +66,17 @@ function increaseTurnCount(){
 //       (nod.nodeType === 3 && isAllWs(nod))
 //     ); 
 //   }
-function areCards(){
-    cardDeck.querySelectorAll("div.cards").forEach((element) => {
+// function areCards(){
+//     cardDeck.querySelectorAll("div.cards").forEach((element) => {
         
-            if(element.style.visibility!=="hidden"||element.style.visibility==""){
-                return true;
-            }
-            console.log(element);
+//             if(element.style.visibility!=="hidden"||element.style.visibility==""){
+//                 return true;
+//             }
+//             console.log(element);
         
-    });
-    return false;
-}
+//     });
+//     return false;
+// }
 function openCard(card){
     if(currentState=="FirstPick"){
         card.classList.add("open");
@@ -85,6 +85,7 @@ function openCard(card){
         openedCard.innerHTML=`<p>${values[openedCard.id]}</p>`;
         desiredState="SecondPick";
     }else if(currentState=="SecondPick"){
+        desiredState="hold";
         card.classList.add("open");
         card.innerHTML=`<p>${values[card.id]}</p>`;
         if(values[parseInt(openedCard.id)]==values[parseInt(card.id)]){
@@ -105,6 +106,7 @@ function openCard(card){
                 }
                 // console.log(areCards());
                 if(cardsCount!==0){
+                    console.log("fe");
                     desiredState="FirstPick";
                 }else{
                     rounds--;
@@ -138,6 +140,7 @@ function openCard(card){
                 if(multiplayer){
                     otherTurn=!otherTurn;
                 }
+                desiredState="FirstPick";
             },1500);
         }
     }
@@ -172,6 +175,7 @@ function generate(){
         </div>
         `
     }
+    values=[];
     for(let i=1; i<=cardsCount/2; ++i){
         values.push(i);
         values.push(i);
